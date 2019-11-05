@@ -123,7 +123,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="findByName.cpp" />
+    <ClCompile Include="Info.cpp" />
+    <ClCompile Include="listInsertionSort.cpp" />
     <ClCompile Include="MainFile.cpp" />
+    <ClCompile Include="MyFile.cpp" />
+    <ClCompile Include="MyFolder.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Info.h" />
+    <ClInclude Include="List.h" />
+    <ClInclude Include="MyFile.h" />
+    <ClInclude Include="MyFolder.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
