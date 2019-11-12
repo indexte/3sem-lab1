@@ -2,7 +2,6 @@
 #include"MyFile.h"
 #include"MyFolder.h"
 #include"List.h"
-#include"Sorts.h"
 #include<iostream>
 #include<list>
 #include<algorithm>

@@ -8,7 +8,7 @@ string MyFile::getFileFormat()
 	return fileFormat;
 }
 
-void MyFile::printInfo()
+void MyFile::printFileInfo()
 {
 	cout << "Name: " << getName() << endl
 		<< "Size: " << getSize() << endl

@@ -14,8 +14,6 @@ protected:
 
 public:
 
-	virtual void printInfo() = 0;
-
 	//getters
 	string getName();
 	size_t getSize();

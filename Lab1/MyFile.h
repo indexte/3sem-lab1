@@ -9,7 +9,7 @@ protected:
 public:
 	string getFileFormat();
 
-	void printInfo() override;
+	void printFileInfo();
 
 	void setFileFormat(string fileFormat);
 };

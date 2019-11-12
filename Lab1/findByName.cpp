@@ -17,7 +17,7 @@ void findByName(string searchName, list<Info> yourListOfObj) {
 
 	//if the file has a suitable name, then copy it to a new "foundWithName" list
 	copy_if(yourListOfObj.begin(), yourListOfObj.end(), back_inserter(foundWithName), [&searchName](const Info& file) {
-		return file.getName == searchName;
+		return file.getName() == searchName;
 		});
 
 	//print "foundWithName" list
@@ -27,7 +27,7 @@ void findByName(string searchName, list<Info> yourListOfObj) {
 	}
 	else {
 		for (auto i : foundWithName) {
-			cout << i.printInfo() << endl;
+			i.printInfo();
 		}
 	}
 }

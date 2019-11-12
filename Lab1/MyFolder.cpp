@@ -3,7 +3,7 @@
 using std::cout;
 using std::endl;
 
-void MyFolder::printInfo()
+void MyFolder::printFolderInfo()
 {
 	cout << "Name: " << getName() << endl
 		<< "Size: " << getSize() << endl
@@ -17,7 +17,7 @@ void MyFolder::printFolderInclude()
 		cout << i.getName();
 }
 
-void MyFolder::setSize()
+void MyFolder::setFolderSize()
 {
 	for (auto i : folderInclude)
 		size += i.getSize();

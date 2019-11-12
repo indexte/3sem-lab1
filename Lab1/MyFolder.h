@@ -11,8 +11,8 @@ class MyFolder : public Info
 protected:
 	list<Info> folderInclude;
 
-	void printInfo() override;
+	void printFolderInfo();
 	void printFolderInclude();
 
-	void setSize() override;
+	void setFolderSize();
 };
