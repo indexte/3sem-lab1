@@ -1,51 +1,45 @@
-#include"Info.h"
-#include"MyFile.h"
-#include"MyFolder.h"
-#include"List.h"
 #include<iostream>
 #include<list>
 #include<algorithm>
+#include"MyFile.h"
+#include"MyFolder.h"
+#include"List.h"
 
 using std::list;
 using std::cout;
 using std::endl;
 
+//find file or folder by parameter
+void findByName(string searchName, list<MyFile*> yourListOfObj);
+
+
 int main() {
-	//list<FileData> listForCustClass;
+	list<MyFile*> mlst;
+	for (int i = 0; i < 5; i++) {
+		mlst.push_back(new MyFile());
+	}
 
-	//listForCustClass.push_back(FileData());
-	//listForCustClass.push_back(FileData());
+	mlst.push_back(new MyFolder());
 
-	//for (auto i = listForCustClass.begin(); i != listForCustClass.end(); i++) {
-	//	cout << i->getFileName() << endl
-	//		<< i->getFileFormat() << endl
-	//		<< i->getFileSize() << endl
-	//		<< i->getFileCreationTime() << endl
-	//		<< i->getFileModificationTime() << endl;
+	//for (auto i = 0; i < mlst.getSize(); i++) {
+	//	mlst[i]->printInfo();
+	//	cout << endl;
 	//}
+	
+	for (auto i : mlst) {
+		i->printInfo();
+		cout << endl;
+	}
 
-	//else {
-	//	for (auto i = listForCustClass.begin(); i != listForCustClass.end(); i++) {
-	//		cout << i->getFileName() << endl
-	//			<< i->getFileFormat() << endl
-	//			<< i->getFileSize() << endl
-	//			<< i->getFileCreationTime() << endl
-	//			<< i->getFileModificationTime() << endl;
-	//	}
+	cout << "----------------------------------" << endl;
+
+	findByName("DefaultFoldeName", mlst);
+
+
+
+	//for (auto i = 0; i < mlst.getSize(); i++) {
+	//	mlst[i]->printInfo();
+	//	cout << endl;
 	//}
-
-	//listInsertionSort(mlst, mlst.getSize());
-	//listMergeSort(mlst, 0, mlst.getSize());
-
-	//cout << "____________________________________" << endl;
-	//for (int i = 0; i < mlst.getSize(); i++) {
-	//	cout << mlst[i].getFileName() << endl
-	//		<< mlst[i].getFileFormat() << endl
-	//		<< mlst[i].getFileSize() << endl
-	//		<< mlst[i].getFileCreationTime() << endl
-	//		<< mlst[i].getFileModificationTime() << endl;
-	//}
-
-
 	return 0;
 }

@@ -1,18 +1,19 @@
 #pragma once
-#include"Info.h"
-#include"MyFile.h"
-#include<list>
 #include<iostream>
+#include<list>
+#include"MyFile.h"
 
 using std::list;
 
-class MyFolder : public Info
+class MyFolder : public MyFile
 {
-protected:
-	list<Info> folderInclude;
-
-	void printFolderInfo();
-	void printFolderInclude();
+private:
+	list<MyFile> folderInclude;
 
 	void setFolderSize();
+public:
+	MyFolder();
+
+	void printInfo() override;
+	void printFolderInclude();
 };

@@ -1,15 +1,37 @@
 #pragma once
-#include"Info.h"
 #include<iostream>
+#include<string>
+#include<random>
+#include<vector>
 
-class MyFile : public Info
+using std::vector;
+using std::string;
+
+class MyFile
 {
 protected:
-	string fileFormat;
+	string name;
+	size_t size;
+	size_t creationTime;
+	size_t modificationTime;
+
 public:
+	MyFile();
+
+	//getters
+	string getName() const;
+	size_t getSize();
+	size_t getCreationTime();
+	size_t getModificationTime();
 	string getFileFormat();
 
-	void printFileInfo();
+	//comparison operators
+	bool operator>(MyFile toCompare);
+	bool operator<(MyFile toCompare);
+	bool operator==(MyFile toCompare);
 
-	void setFileFormat(string fileFormat);
+	virtual void printInfo();
+
+private:
+	string fileFormat;
 };

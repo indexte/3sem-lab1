@@ -18,10 +18,7 @@
     <ClCompile Include="MainFile.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Info.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="findByName.cpp">
+    <ClCompile Include="findBy.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="MyFile.cpp">
@@ -30,14 +27,11 @@
     <ClCompile Include="MyFolder.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="listInsertionSort.cpp">
+    <ClCompile Include="Sorts.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Info.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="MyFile.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>

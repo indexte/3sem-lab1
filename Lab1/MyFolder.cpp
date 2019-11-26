@@ -3,7 +3,18 @@
 using std::cout;
 using std::endl;
 
-void MyFolder::printFolderInfo()
+MyFolder::MyFolder()
+{
+	std::random_device rd;
+	std::mt19937 mersenne(rd());
+
+	name = "DefaultFolderName";
+	setFolderSize();
+	creationTime = mersenne() % 9999;
+	modificationTime = creationTime + mersenne() % 9999;
+}
+
+void MyFolder::printInfo()
 {
 	cout << "Name: " << getName() << endl
 		<< "Size: " << getSize() << endl
@@ -13,12 +24,19 @@ void MyFolder::printFolderInfo()
 
 void MyFolder::printFolderInclude()
 {
-	for (auto i : folderInclude)
-		cout << i.getName();
+	if (folderInclude.size() == 0) {
+		cout << "Nothing found" << endl;
+	}
+	else {
+		for (auto i : folderInclude) {
+			cout << i.getName();
+		}
+	}
 }
 
 void MyFolder::setFolderSize()
 {
+	size = 0;
 	for (auto i : folderInclude)
 		size += i.getSize();
 }
