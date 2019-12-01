@@ -124,15 +124,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="findBy.cpp" />
-    <ClCompile Include="Sorts.cpp" />
     <ClCompile Include="MainFile.cpp" />
-    <ClCompile Include="MyFile.cpp" />
-    <ClCompile Include="MyFolder.cpp" />
+    <ClCompile Include="classes/fileSystem/MyFile.cpp" />
+    <ClCompile Include="classes/fileSystem/MyFolder.cpp" />
+    <ClInclude Include="Listsorts.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="List.h" />
-    <ClInclude Include="MyFile.h" />
-    <ClInclude Include="MyFolder.h" />
+    <ClInclude Include="classes/List.h" />
+    <ClInclude Include="classes/fileSystem/MyFile.h" />
+    <ClInclude Include="classes/fileSystem/MyFolder.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

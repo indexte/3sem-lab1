@@ -1,19 +1,19 @@
 #include<iostream>
-#include<list>
+#include<vector>
 #include<algorithm>
 #include<string>
-#include"MyFile.h"
+#include"classes/fileSystem/MyFile.h"
 
 using std::cout;
 using std::endl;
 using std::string;
-using std::list;
+using std::vector;
 
 //function for search file or folder by name
-void findByName(string searchName, list<MyFile*> yourListOfObj) {
+void findByName(string searchName, vector<MyFile*> yourListOfObj) {
 
 	//additional list to save found files with a suitable name
-	list<MyFile*> foundWithName;
+	vector<MyFile*> foundWithName;
 
 	//if the file has a suitable name, then copy it to a new "foundWithName" list
 	copy_if(yourListOfObj.begin(), yourListOfObj.end(), back_inserter(foundWithName), [&searchName](const MyFile* file) {
