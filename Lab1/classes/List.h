@@ -4,21 +4,10 @@
 using std::cout;
 using std::endl;
 
+
 template<typename T>
 class List
 {
-public:
-	List();
-
-	void pushBack(T data);
-	int getsize();
-	T& operator[](const int index);
-	void popFront();
-	void pushFront(T data);
-	void insert(T data, int index);
-	void removeAt(int index);
-	void clear();
-
 private:
 
 	template<typename T>
@@ -35,6 +24,20 @@ private:
 	};
 	int size;
 	Node<T>* head;
+
+public:
+	List();
+
+	void pushBack(T data);
+	int getsize();
+	T& operator[](const int index);
+	void popFront();
+	void pushFront(T data);
+	void insert(T data, int index);
+	void removeAt(int index);
+	void clear();
+	void insertionSort();
+	void push(Node<T>* newHead);
 };
 
 template<typename T>
@@ -142,5 +145,37 @@ void List<T>::clear()
 	while (size)
 	{
 		popFront();
+	}
+}
+
+template <typename T>
+void List<T>::push(Node<T>* newHead) {
+	newHead->pNext = head;
+	head = newHead;
+}
+
+template <typename T>
+void List<T>::insertionSort() {    // Insertion sort
+	Node<T>* curr = head;
+	Node<T>* sorted = head;
+	while (curr->pNext) {
+		if (curr->pNext->data < curr->data) {       // If next list element smaller than max element of sorted part
+			Node<T>* temp = curr->pNext;
+			curr->pNext = curr->pNext->pNext;
+			while (sorted != curr->pNext) {     // Search place to insert element
+				if (sorted->data > temp->data) {   // If element is smaller  than every element in sorted part
+					push(temp);
+					break;
+				}
+				if (sorted->pNext->data > temp->data) {   // If we have found place for element 
+					temp->pNext = sorted->pNext;
+					sorted->pNext = temp;
+					break;
+				}
+				sorted = sorted->pNext;
+			}
+			sorted = head;
+		}
+		else curr = curr->pNext;
 	}
 }

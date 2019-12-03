@@ -9,11 +9,9 @@ using std::vector;
 using std::list;
 using std::cout;
 using std::endl;
-using std::swap;
 
 //function to search for an object by parameter
 void findByName(string searchName, vector<MyFile*> yourListOfObj);
-
 
 int main() {
 
@@ -28,6 +26,9 @@ int main() {
 	for (auto i = 0; i < 5; i++)
 		mlstInt.pushBack(mersenne()%100);
 	//print mlstInt
+
+	mlstInt.insertionSort();
+
 	for (auto i = 0; i < mlstInt.getsize(); i++)
 		cout << mlstInt[i] << endl;
 
@@ -45,6 +46,7 @@ int main() {
 	mlstDouble.pushBack(8.34);
 	mlstDouble.pushBack(23.11);
 	mlstDouble.pushBack(7.67);
+
 
 	//print mlstDouble
 	for (auto i = 0; i < mlstDouble.getsize(); i++)
@@ -100,8 +102,6 @@ int main() {
 		mlstSort.push_back(new MyFolder());
 	}
 
-	insertion_sort(mlstSort);
-
 	for (auto i : mlstSort)
 		i->printInfo();
 
@@ -123,5 +123,6 @@ int main() {
 	mlstFind.clear();
 
 	cout << endl;
+
 	return 0;
 }

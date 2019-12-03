@@ -127,7 +127,6 @@
     <ClCompile Include="MainFile.cpp" />
     <ClCompile Include="classes/fileSystem/MyFile.cpp" />
     <ClCompile Include="classes/fileSystem/MyFolder.cpp" />
-    <ClInclude Include="Listsorts.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="classes/List.h" />
