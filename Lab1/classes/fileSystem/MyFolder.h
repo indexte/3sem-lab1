@@ -1,3 +1,5 @@
+//Inheritance class for description folder
+
 #pragma once
 #include<iostream>
 #include<list>

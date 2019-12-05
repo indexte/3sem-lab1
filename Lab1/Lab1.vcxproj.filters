@@ -21,24 +21,21 @@
     <ClCompile Include="findBy.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="MyFile.cpp">
+    <ClCompile Include="classes/fileSystem/MyFile.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="MyFolder.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Sorts.cpp">
+    <ClCompile Include="classes/fileSystem/MyFolder.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MyFile.h">
+    <ClInclude Include="classes/List.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="MyFolder.h">
+    <ClInclude Include="classes/fileSystem/MyFile.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="List.h">
+    <ClInclude Include="classes/fileSystem/MyFolder.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

@@ -4,7 +4,6 @@
 using std::cout;
 using std::endl;
 
-
 template<typename T>
 class List
 {
@@ -37,7 +36,6 @@ public:
 	void removeAt(int index);
 	void clear();
 	void insertionSort();
-	void push(Node<T>* newHead);
 };
 
 template<typename T>
@@ -148,34 +146,45 @@ void List<T>::clear()
 	}
 }
 
-template <typename T>
-void List<T>::push(Node<T>* newHead) {
-	newHead->pNext = head;
-	head = newHead;
-}
-
-template <typename T>
-void List<T>::insertionSort() {    // Insertion sort
-	Node<T>* curr = head;
-	Node<T>* sorted = head;
-	while (curr->pNext) {
-		if (curr->pNext->data < curr->data) {       // If next list element smaller than max element of sorted part
-			Node<T>* temp = curr->pNext;
-			curr->pNext = curr->pNext->pNext;
-			while (sorted != curr->pNext) {     // Search place to insert element
-				if (sorted->data > temp->data) {   // If element is smaller  than every element in sorted part
-					push(temp);
-					break;
-				}
-				if (sorted->pNext->data > temp->data) {   // If we have found place for element 
-					temp->pNext = sorted->pNext;
-					sorted->pNext = temp;
-					break;
-				}
-				sorted = sorted->pNext;
-			}
-			sorted = head;
-		}
-		else curr = curr->pNext;
-	}
-}
+template< typename T> 
+void List<T>::insertionSort(){
+	if(head==nullptr) return;
+	Node<T>* start=head;
+	Node<T>* end=head;
+	Node<T>* key=head->pNext;
+	Node<T>* temp=nullptr;
+	Node<T>* tStart=nullptr;
+	Node<T>* tEnd=nullptr;
+	Node<T>* Next;	
+	while(key!=nullptr){
+		Next=key->pNext;
+		if(end->data <= key->data)
+		{
+			 end=key;
+			 key=Next;	
+			 continue;
+		};
+		if(key->data <= start->data)
+		{
+			end->pNext=key->pNext;
+			temp=start;
+			start=key;
+			start->pNext=temp;
+			key=Next;
+			continue;	
+		};
+		for(temp=start; temp!=end; temp=temp->pNext ){
+			if( temp->data < key->data  &&  key->data <= temp->pNext->data)
+			{
+				end->pNext=key->pNext;
+				tStart=temp->pNext;
+				temp->pNext=key;
+				key->pNext=tStart;
+				break;
+			};		
+		
+		};
+		key=Next;
+	};
+	head=start;
+ };

@@ -1,3 +1,10 @@
+/**
+	\file Mainfile.cpp
+
+	\brief Lab 1 - Linked list and STL list with custom filesystem (Files and folders)
+
+	\author Lypynets Yaroslav K-29
+*/
 #include<vector>
 #include<list>
 #include<algorithm>
@@ -10,13 +17,13 @@ using std::list;
 using std::cout;
 using std::endl;
 
-//function to search for an object by parameter
 void findByName(string searchName, vector<MyFile*> yourListOfObj);
 
 int main() {
 
 	std::random_device rd;
 	std::mt19937 mersenne(rd());
+
 
 	//singly linked list test for int
 	cout << "singly linked list test for int---------------------------" << endl << endl;
@@ -25,10 +32,11 @@ int main() {
 
 	for (auto i = 0; i < 5; i++)
 		mlstInt.pushBack(mersenne()%100);
-	//print mlstInt
 
+	//test linked list insertion sort for int
 	mlstInt.insertionSort();
 
+	//print mlstInt
 	for (auto i = 0; i < mlstInt.getsize(); i++)
 		cout << mlstInt[i] << endl;
 
@@ -46,7 +54,6 @@ int main() {
 	mlstDouble.pushBack(8.34);
 	mlstDouble.pushBack(23.11);
 	mlstDouble.pushBack(7.67);
-
 
 	//print mlstDouble
 	for (auto i = 0; i < mlstDouble.getsize(); i++)
@@ -68,6 +75,7 @@ int main() {
 	mlstString.pushBack("testing");
 	mlstString.pushBack("linked list");
 
+	mlstString.insertionSort();
 	//print mlstString
 	for (auto i = 0; i < mlstString.getsize(); i++)
 		cout << mlstString[i] << endl;
@@ -85,6 +93,7 @@ int main() {
 		mlstClass.pushBack(new MyFile());
 		mlstClass.pushBack(new MyFolder());
 	}
+
 	//print mlstClass
 	for (auto i = 0; i < mlstClass.getsize(); i++)
 		mlstClass[i]->printInfo();

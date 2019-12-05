@@ -1,3 +1,5 @@
+//Ñlass for description file
+
 #pragma once
 #include<iostream>
 #include<string>
@@ -18,18 +20,21 @@ protected:
 public:
 	MyFile();
 
-	//getters
+	//get function for each field
 	string getName() const;
 	size_t getSize();
 	size_t getCreationTime();
 	size_t getModificationTime();
 	string getFileFormat();
 
-	//comparison operators
-	bool operator>(MyFile toCompare);
-	bool operator<(MyFile toCompare);
-	bool operator==(MyFile toCompare);
-
+	//comparison operators for MyFile class
+	bool operator>(MyFile& toCompare);
+	bool operator<(MyFile& toCompare);
+	bool operator<=(MyFile& toCompare);
+	bool operator>=(MyFile& toCompare);
+	bool operator==(MyFile& toCompare);
+	
+	//brief print data of MyFile and MyFolder class object
 	virtual void printInfo();
 
 private:

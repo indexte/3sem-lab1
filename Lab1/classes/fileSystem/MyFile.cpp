@@ -31,20 +31,22 @@ size_t MyFile::getModificationTime() {
 }
 
 //comparison operators
-bool MyFile::operator>(MyFile toCompare) {
-	if (this->getModificationTime() > toCompare.getModificationTime())
-		return true;
-	return false;
+bool MyFile::operator>(MyFile& toCompare) {
+	return modificationTime > toCompare.getModificationTime();
 }
-bool MyFile::operator<(MyFile toCompare) {
-	if (this->getModificationTime() < toCompare.getModificationTime())
-		return true;
-	return false;
+bool MyFile::operator<(MyFile& toCompare) {
+	return modificationTime < toCompare.getModificationTime();
 }
-bool MyFile::operator==(MyFile toCompare) {
-	if (this->getModificationTime() == toCompare.getModificationTime())
-		return true;
-	return false;
+bool MyFile::operator<=(MyFile& toCompare)
+{
+	return modificationTime <= toCompare.getModificationTime();
+}
+bool MyFile::operator>=(MyFile& toCompare)
+{
+	return modificationTime >= toCompare.getModificationTime();
+}
+bool MyFile::operator==(MyFile& toCompare) {
+	return modificationTime == toCompare.getModificationTime();
 }
 
 string MyFile::getFileFormat()
